@@ -18,7 +18,7 @@ from ..exceptions import RateKingError, ExtractionError
 class Molecule(object):
     """Class to represent a molecule in RateKing."""
 
-    def __init__(self, name, filePath, zeroPointEnergy=0, enthalpy=0, entropy=0, gibbs=0, qElectronic=0, qVibrational=0, qRotational=0, qTranslational=0, link=-1, temperature=298.15):
+    def __init__(self, name='Molecule', filePath=None, zeroPointEnergy=0, enthalpy=0, entropy=0, gibbs=0, qElectronic=0, qVibrational=0, qRotational=0, qTranslational=0, link=-1, temperature=298.15):
         self.name = name
         self.filePath = filePath
         self.zeroPointEnergy = zeroPointEnergy
@@ -47,7 +47,7 @@ class Molecule(object):
         try:
             temp_molecule = G16LOGfile(filePath, link=-1, thermoAsw=True)
             total_links = temp_molecule.getLinkSize()
-            return total_links
+            return int(total_links)
         except Exception as e:
             raise RateKingError(f"Error! Could not read link information from file: {filePath}. Details: {str(e)}")
 
