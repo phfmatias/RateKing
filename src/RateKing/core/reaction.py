@@ -17,7 +17,15 @@ from ..exceptions import RateKingError
 from .molecule import Molecule, TransitionState 
 
 class Reaction(object):
-    """Class to represent a chemical reaction in RateKing."""
+    """Class to represent a chemical reaction in RateKing.
+
+    Attributes:
+        name (str): The name of the reaction.
+        reactantsPath (list): A list of dictionaries containing the name, file path, and link for each reactant.
+        productsPath (list): A list of dictionaries containing the name, file path, and link for each product (optional).
+        transitionStatePath (dict): A dictionary containing the name, file path, and link for the transition state (optional).
+        temperature (float): The temperature at which to calculate thermodynamic properties and rate constants.
+    """
 
     def __init__(self, name, reactantsPath, productsPath, transitionStatePath=None, temperature=298.15):
         self.Constants = CONSTANTS()

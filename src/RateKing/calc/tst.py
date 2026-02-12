@@ -17,7 +17,11 @@ import numpy as np
 from ..utils.constants import CONSTANTS
 
 class TST:
-    """Class to calculate the rate constant using Transition State Theory (TST) for a given reaction."""
+    """Class to calculate the rate constant using Transition State Theory (TST) for a given reaction.
+    
+    Attributes:
+        reaction: An instance of the Reaction class containing all necessary information about the reaction.
+    """
 
     def __init__(self, reaction):
         self.reaction = reaction

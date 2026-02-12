@@ -16,7 +16,14 @@ from MoleKing import G16LOGfile
 from ..exceptions import RateKingError, ExtractionError
 
 class Molecule(object):
-    """Class to represent a molecule in RateKing."""
+    """Class to represent a molecule in RateKing.
+    
+    Attributes:
+        name (str): The name of the molecule.
+        filePath (str): The file path to the molecule's Gaussian log file.
+        link (int): The link number in the Gaussian log file to extract data from.
+        temperature (float): The temperature at which to calculate thermodynamic properties and partition functions.
+    """
 
     def __init__(self, name='Molecule', filePath=None, zeroPointEnergy=0, enthalpy=0, entropy=0, gibbs=0, qElectronic=0, qVibrational=0, qRotational=0, qTranslational=0, link=-1, temperature=298.15):
         self.name = name

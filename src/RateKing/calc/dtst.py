@@ -16,7 +16,11 @@ from ..utils.constants import CONSTANTS
 import numpy as np
 
 class dTST:
-    """Class to calculate the rate constant using deformed Transition State Theory (DTST) for a given reaction."""
+    """Class to calculate the rate constant using deformed Transition State Theory (DTST) for a given reaction.
+    
+    Attributes:
+        reaction: An instance of the Reaction class containing all necessary information about the reaction.
+    """
 
     def __init__(self, reaction):
         self.reaction = reaction
