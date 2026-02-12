@@ -1,0 +1,70 @@
+[project]
+name = "RateKing"
+version = "0.1.0"
+description = "Python Boilerplate contains all the boilerplate you need to create a Python package."
+readme = "README.md"
+authors = [
+  {name = "Pedro H. F. Matias", email = "pedrohfmatias@gmail.com"}
+]
+
+maintainers = [
+  {name = "Pedro H. F. Matias", email = "pedrohfmatias@gmail.com"}
+]
+
+classifiers = [
+    # TODO
+]
+
+license = {text = "MIT"}
+
+dependencies = [
+  "MoleKing==1.6.0",
+  "numpy",
+  "scipy==1.15.3"
+]
+
+requires-python = ">= 3.10"
+
+[dependency-groups]
+dev = [
+    { include-group = "lint" },
+    { include-group = "test" },
+]
+
+lint = [
+    "ruff",
+]
+
+test = [
+    "coverage",
+    "pytest",
+    "ty",
+    "ipdb",
+]
+
+[project.urls]
+bugs = "https://github.com/phfmatias/RateKing/issues"
+changelog = "https://github.com/phfmatias/RateKing/blob/main/changelog.md"
+homepage = "https://github.com/phfmatias/RateKing"
+
+[tool.ty]
+# All rules are enabled as "error" by default; no need to specify unless overriding.
+# Example override: relax a rule for the entire project (uncomment if needed).
+# rules.TY015 = "warn"  # For invalid-argument-type, warn instead of error.
+
+[tool.ruff]
+line-length = 120
+
+[tool.ruff.lint]
+select = [
+    "E",   # pycodestyle errors
+    "W",   # pycodestyle warnings
+    "F",   # Pyflakes
+    "I",   # isort
+    "B",   # flake8-bugbear
+    "UP",  # pyupgrade
+]
+
+[tool.uv]
+package = true
+default-groups = ["dev"]
