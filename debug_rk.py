@@ -131,14 +131,20 @@ class KINECTICS_AND_TUNNELING_DEBUG:
     """Class to hold debug for TST class in RateKing."""
 
     def __init__(self):
-        self.reactant1 = {"name": "NH3", "filePath": "../TEST_CASES/NH/nh3_m062x.out", "link": 2}
-        self.reactant2 = {"name": "OH", "filePath": "../TEST_CASES/NH/oh_m062x.out", "link": 2}
-        self.ts = {"name": "TestTS", "filePath": "../TEST_CASES/NH/nh3oh_ts_m062x.out", "link": 2}
-        self.product1 = {"name": "NH2", "filePath": "../TEST_CASES/NH/nh2_m062x.out", "link": 2}
-        self.product2 = {"name": "H2O", "filePath": "../TEST_CASES/NH/h2o_m062x.out", "link": 2}    
-        self.reactants = [self.reactant1, self.reactant2]
-        self.products = [self.product1, self.product2]
+        # self.reactant1 = {"name": "NH3", "filePath": "../TEST_CASES/NH/nh3_m062x.out", "link": 2}
+        # self.reactant2 = {"name": "OH", "filePath": "../TEST_CASES/NH/oh_m062x.out", "link": 2}
+        # self.ts = {"name": "TestTS", "filePath": "../TEST_CASES/NH/nh3oh_ts_m062x.out", "link": 2}
+        # self.product1 = {"name": "NH2", "filePath": "../TEST_CASES/NH/nh2_m062x.out", "link": 2}
+        # self.product2 = {"name": "H2O", "filePath": "../TEST_CASES/NH/h2o_m062x.out", "link": 2}    
+        # self.reactants = [self.reactant1, self.reactant2]
+        # self.products = [self.product1, self.product2]
 
+        self.reactant1 = {"name": "et1", "filePath": "../TEST_CASES/ORCA/et1.out", 'link': 1}
+        self.reactant2 = {"name": "H", "filePath": "../TEST_CASES/ORCA/H.out", 'link': 1}
+        self.ts = {"name": "TSA_1", "filePath": "../TEST_CASES/ORCA/TSA_1.out", 'link': 1}
+
+        reactants = [self.reactant1, self.reactant2]
+        products = []
 
     def evalProperties(self):
         """Method to evaluate the rate constant calculated using TST."""

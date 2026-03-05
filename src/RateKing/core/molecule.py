@@ -12,7 +12,7 @@
 ##   Language:     ['Python']
 ##   Description:  ['Module to define the Molecule class for RateKing.']
 
-from MoleKing import G16LOGfile
+from MoleKing import G16LOGfile, ORCALOGfile
 from ..exceptions import RateKingError, ExtractionError
 
 class Molecule(object):
@@ -58,11 +58,27 @@ class Molecule(object):
         except Exception as e:
             raise RateKingError(f"Error! Could not read link information from file: {filePath}. Details: {str(e)}")
 
+    def detectOrcaOrGaussian(self):
+        """Method to detect if the file is from ORCA or Gaussian and set the link accordingly."""
+        try:
+            with open(self.filePath, 'r') as file:
+                if "* O   R   C   A *" in file.read(5000):
+                    return "ORCA"
+                else:
+                    return "Gaussian"
+        except Exception as e:
+            raise RateKingError(f"Error! Could not detect file format for file: {self.filePath}. Details: {str(e)}")
+
     def loadMoleculeMoleking(self):
         """Method to load the molecule data using MoleKing."""
 
+        orca_or_gaussian = self.detectOrcaOrGaussian()
+
         try:
-            self.mkMolecule = G16LOGfile(self.filePath, link=self.link, thermoAsw=True)
+            if orca_or_gaussian == "ORCA":
+                self.mkMolecule = ORCALOGfile(self.filePath, thermoAsw=True)
+            else:
+                self.mkMolecule = G16LOGfile(self.filePath, link=self.link, thermoAsw=True)
         except Exception as e:
             raise RateKingError(f"Error! MoleKing failed to load the molecule from the file: {self.filePath}. Details: {str(e)}")
     
