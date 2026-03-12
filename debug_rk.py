@@ -1,4 +1,4 @@
-from RateKing import DEBUG_ERRORS
+
 from RateKing import CONSTANTS
 from RateKing import Molecule, TransitionState, Reaction
 from RateKing import TST, dTST
@@ -12,7 +12,7 @@ class DEBUG_ERROS:
     """Class to hold debug errors for RateKing."""
 
     def __init__(self):
-        self.debug = DEBUG_ERRORS()
+        pass
 
     def eval_RK_Error(self):
         """Method to evaluate the RK_Error for debugging."""
@@ -57,7 +57,7 @@ class MOLECULE_DEBUG:
     """Class to hold debug for Molecule class in RateKing."""
 
     def __init__(self):
-        self.molecule = Molecule("TestMolecule", "../TEST_CASES/NH/nh3_m062x.out")
+        self.molecule = Molecule("TestMolecule", "../RateKingWeb/TEST_CASES/NH/nh3_m062x.out")
 
     def evalProperties(self):
         """Method to evaluate the Zero-Point Energy extraction."""
@@ -75,7 +75,7 @@ class TS_DEBUG:
     """Class to hold debug for TransitionState class in RateKing."""
 
     def __init__(self):
-        self.ts = TransitionState("TestTS", "../TEST_CASES/NH/nh3oh_ts_m062x.out")
+        self.ts = TransitionState("TestTS", "../RateKingWeb/TEST_CASES/NH/nh3oh_ts_m062x.out")
 
     def evalProperties(self):
         """Method to evaluate the properties of the transition state."""
@@ -94,18 +94,18 @@ class REACTION_DEBUG:
     """Class to hold debug for Reaction class in RateKing."""
 
     def __init__(self):
-        # self.reactant1 = Molecule("NH3", "../TEST_CASES/NH/nh3_m062x.out", link=2)
-        # self.reactant2 = Molecule("OH", "../TEST_CASES/NH/oh_m062x.out", link=2)
-        # self.ts = TransitionState("TestTS", "../TEST_CASES/NH/nh3oh_ts_m062x.out", link=2)
-        # self.product1 = Molecule("NH2", "../TEST_CASES/NH/nh2_m062x.out", link=2)
-        # self.product2 = Molecule("H2O", "../TEST_CASES/NH/h2o_m062x.out", link=2)
+        # self.reactant1 = Molecule("NH3", "../RateKingWeb/TEST_CASES/NH/nh3_m062x.out", link=2)
+        # self.reactant2 = Molecule("OH", "../RateKingWeb/TEST_CASES/NH/oh_m062x.out", link=2)
+        # self.ts = TransitionState("TestTS", "../RateKingWeb/TEST_CASES/NH/nh3oh_ts_m062x.out", link=2)
+        # self.product1 = Molecule("NH2", "../RateKingWeb/TEST_CASES/NH/nh2_m062x.out", link=2)
+        # self.product2 = Molecule("H2O", "../RateKingWeb/TEST_CASES/NH/h2o_m062x.out", link=2)
         # self.reaction = Reaction("TestReaction", [self.reactant1, self.reactant2], [self.product1, self.product2], self.ts)
 
-        self.reactant1 = {"name": "NH3", "filePath": "../TEST_CASES/NH/nh3_m062x.out", "link": 2}
-        self.reactant2 = {"name": "OH", "filePath": "../TEST_CASES/NH/oh_m062x.out", "link": 2}
-        self.ts = {"name": "TestTS", "filePath": "../TEST_CASES/NH/nh3oh_ts_m062x.out", "link": 2}
-        self.product1 = {"name": "NH2", "filePath": "../TEST_CASES/NH/nh2_m062x.out", "link": 2}
-        self.product2 = {"name": "H2O", "filePath": "../TEST_CASES/NH/h2o_m062x.out", "link": 2}
+        self.reactant1 = {"name": "NH3", "filePath": "../RateKingWeb/TEST_CASES/NH/nh3_m062x.out", "link": 2}
+        self.reactant2 = {"name": "OH", "filePath": "../RateKingWeb/TEST_CASES/NH/oh_m062x.out", "link": 2}
+        self.ts = {"name": "TestTS", "filePath": "../RateKingWeb/TEST_CASES/NH/nh3oh_ts_m062x.out", "link": 2}
+        self.product1 = {"name": "NH2", "filePath": "../RateKingWeb/TEST_CASES/NH/nh2_m062x.out", "link": 2}
+        self.product2 = {"name": "H2O", "filePath": "../RateKingWeb/TEST_CASES/NH/h2o_m062x.out", "link": 2}
 
         reactants = [self.reactant1, self.reactant2]
         products = [self.product1, self.product2]
@@ -131,20 +131,20 @@ class KINECTICS_AND_TUNNELING_DEBUG:
     """Class to hold debug for TST class in RateKing."""
 
     def __init__(self):
-        # self.reactant1 = {"name": "NH3", "filePath": "../TEST_CASES/NH/nh3_m062x.out", "link": 2}
-        # self.reactant2 = {"name": "OH", "filePath": "../TEST_CASES/NH/oh_m062x.out", "link": 2}
-        # self.ts = {"name": "TestTS", "filePath": "../TEST_CASES/NH/nh3oh_ts_m062x.out", "link": 2}
-        # self.product1 = {"name": "NH2", "filePath": "../TEST_CASES/NH/nh2_m062x.out", "link": 2}
-        # self.product2 = {"name": "H2O", "filePath": "../TEST_CASES/NH/h2o_m062x.out", "link": 2}    
-        # self.reactants = [self.reactant1, self.reactant2]
-        # self.products = [self.product1, self.product2]
+        self.reactant1 = {"name": "NH3", "filePath": "../RateKingWeb/TEST_CASES/NH/nh3_m062x.out", "link": 2}
+        self.reactant2 = {"name": "OH", "filePath": "../RateKingWeb/TEST_CASES/NH/oh_m062x.out", "link": 2}
+        self.ts = {"name": "TestTS", "filePath": "../RateKingWeb/TEST_CASES/NH/nh3oh_ts_m062x.out", "link": 2}
+        self.product1 = {"name": "NH2", "filePath": "../RateKingWeb/TEST_CASES/NH/nh2_m062x.out", "link": 2}
+        self.product2 = {"name": "H2O", "filePath": "../RateKingWeb/TEST_CASES/NH/h2o_m062x.out", "link": 2}    
+        self.reactants = [self.reactant1, self.reactant2]
+        self.products = [self.product1, self.product2]
 
-        self.reactant1 = {"name": "et1", "filePath": "../TEST_CASES/ORCA/et1.out", 'link': 1}
-        self.reactant2 = {"name": "H", "filePath": "../TEST_CASES/ORCA/H.out", 'link': 1}
-        self.ts = {"name": "TSA_1", "filePath": "../TEST_CASES/ORCA/TSA_1.out", 'link': 1}
+        # self.reactant1 = {"name": "et1", "filePath": "../RateKingWeb/TEST_CASES/ORCA/et1.out", 'link': 1}
+        # self.reactant2 = {"name": "H", "filePath": "../RateKingWeb/TEST_CASES/ORCA/H.out", 'link': 1}
+        # self.ts = {"name": "TSA_1", "filePath": "../RateKingWeb/TEST_CASES/ORCA/TSA_1.out", 'link': 1}
 
-        reactants = [self.reactant1, self.reactant2]
-        products = []
+        # reactants = [self.reactant1, self.reactant2]
+        # products = []
 
     def evalProperties(self):
         """Method to evaluate the rate constant calculated using TST."""

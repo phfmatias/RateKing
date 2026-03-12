@@ -19,7 +19,7 @@ from .core.reaction import Reaction
 from .calc.tst import TST
 from .calc.dtst import dTST
 from .calc import tunneling_corrections
-from .calc.tunneling_corrections import eckartCorrection, bell35Correction, bell58Correction, bell2TCorrection
+from .calc.tunneling_corrections import eckartCorrection, bell35Correction, bell58Correction, bell2TCorrection, wignerCorrection
 
 # Make tunneling_corrections accessible as RateKing.tunneling_corrections
 sys.modules['RateKing.tunneling_corrections'] = tunneling_corrections
@@ -35,5 +35,6 @@ __all__ = [
     "eckartCorrection",
     "bell35Correction",
     "bell58Correction",
-    "bell2TCorrection"
+    "bell2TCorrection",
+    "wignerCorrection"
 ]
