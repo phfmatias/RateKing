@@ -35,7 +35,7 @@ class Reaction(object):
         self.transitionStatePath = transitionStatePath  # Dictionary with keys: name, filePath, link (optional)
         self.reactants = []  # List of Molecule objects 
         self.products = []    # List of Molecule objects (optional)
-        self.transitionState = None  # TransitionState object 
+        #self.transitionState = None  # TransitionState object 
         self.temperature = temperature
 
         # Loading reaction data and initializing properties
