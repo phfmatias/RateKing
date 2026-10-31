@@ -1,7 +1,7 @@
 [project]
 name = "RateKing"
 version = "0.1.0"
-description = "Python Boilerplate contains all the boilerplate you need to create a Python package."
+description = "Rate constants from Gaussian and ORCA calculations: TST, deformed TST and tunnelling corrections."
 readme = "README.md"
 authors = [
   {name = "Pedro H. F. Matias", email = "pedrohfmatias@gmail.com"}
